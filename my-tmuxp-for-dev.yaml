@@ -1,0 +1,45 @@
+session_name: xabyss-dev
+environment:
+  EDITOR: /usr/bin/vim
+  HOME: /home/testbed/
+windows:
+- window_name: dev window
+  layout: 658f,210x65,0,0{95x65,0,0,45,114x65,96,0[114x16,96,0,46,114x15,96,17,48,114x32,96,33,47]}
+  shell_command_before:
+    - cd ~/                    # run as a first command in all panes
+    - zsh
+    - clear
+  panes:
+    - shell_command:           # pane no. 1
+        - cd ~/cloudhc/capture
+        - clear
+      focus: true
+    - shell_command:           # pane no. 2
+        - echo "build"
+        - cd ~/cloudhc/capture
+        - clear
+    - shell_command:           # pane no. 3
+        - tile-monitor --dev gxpci0 --resume -- mpipe-stat -i 1 -p -r gbe1 xgbe2 gbe3 xgbe4
+    - shell_command:           # pane no. 4
+        - tail -f /opt/xabyss/css/log/capture.log
+- window_name: monitor window
+  layout: 6a3b,237x76,0,0{114x76,0,0[114x20,0,0,82,114x19,0,21,89,114x35,0,41,88],122x76,115,0[122x24,115,0,83,122x13,115,25,84,122x19,115,39,85,122x17,115,59,87]}
+  panes:
+    - shell_command:           # pane no. 1
+        - top
+    - shell_command:           # pane no. 2
+        - vmstat 1
+    - shell_command:           # pane no. 3
+        - mpstat -P ALL 1
+    - shell_command:           # pane no. 4
+        - clear
+        - uptime
+        - dmesg | tail
+        - free -m
+    - shell_command:           # pane no. 5
+        - iostat -xz 1
+    - shell_command:           # pane no. 6
+        - pidstat 1
+    - shell_command:           # pane no. 7
+        - sar -n DEV 1
+
