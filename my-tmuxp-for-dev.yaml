@@ -4,7 +4,7 @@ environment:
   HOME: /home/testbed/
 windows:
 - window_name: dev window
-  layout: 658f,210x65,0,0{95x65,0,0,45,114x65,96,0[114x16,96,0,46,114x15,96,17,48,114x32,96,33,47]}
+  layout: 5fa5,237x76,0,0{119x76,0,0,1,117x76,120,0[117x20,120,0,2,117x19,120,21,3,117x17,120,41,4,117x17,120,59,13]}
   shell_command_before:
     - cd ~/                    # run as a first command in all panes
     - zsh
@@ -19,11 +19,14 @@ windows:
         - cd ~/cloudhc/capture
         - clear
     - shell_command:           # pane no. 3
-        - tile-monitor --dev gxpci0 --resume -- mpipe-stat -i 1 -p -r gbe1 xgbe2 gbe3 xgbe4
+        - tail -f /opt/xabyss/css/log/stats.log
     - shell_command:           # pane no. 4
         - tail -f /opt/xabyss/css/log/capture.log
+    - shell_command:           # pane no. 5
+        #- tile-monitor --dev gxpci0 --resume -- mpipe-stat -i 1 -p -r gbe1 xgbe2 gbe3 xgbe4
+        - tile-monitor --dev gxpci0 --resume -- tail -f /opt/xabyss/css/log.txt
 - window_name: monitor window
-  layout: 6a3b,237x76,0,0{114x76,0,0[114x20,0,0,82,114x19,0,21,89,114x35,0,41,88],122x76,115,0[122x24,115,0,83,122x13,115,25,84,122x19,115,39,85,122x17,115,59,87]}
+  layout: e1b8,237x76,0,0{109x76,0,0[109x21,0,0,5,109x19,0,22,6,109x34,0,42,7],127x76,110,0[127x25,110,0,8,127x13,110,26,9,127x19,110,40,10,127x16,110,60,11]}
   panes:
     - shell_command:           # pane no. 1
         - top
