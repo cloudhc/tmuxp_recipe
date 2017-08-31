@@ -1,4 +1,4 @@
-session_name: 4-pane-split
+session_name: xabyss-ops
 environment:
   EDITOR: /usr/bin/vim
   HOME: /home/testbed/
@@ -20,5 +20,5 @@ windows:
         - cd ~/vim_recipe/my_vim
         - clear
     - shell_command:           # pane no. 4
-        - cd ~/working/capture
+        - cd ~/tmuxp_recipe
         - clear
