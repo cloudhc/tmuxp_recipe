@@ -1,0 +1,23 @@
+session_name: xabyss-docker
+environment:
+  EDITOR: /usr/bin/vim
+  HOME: /home/devops
+windows:
+- window_name: docker
+  layout: c366,209x65,0,0[210x47,0,0{104x47,0,0,1,105x47,105,0,2},210x17,0,48{104x17,0,48,3,105x17,105,48,4}]
+  start_directory: '~'
+  shell_command_before:
+    - zsh                    # run as a first command in all panes
+    - clear
+  panes:
+    - shell_command:           # pane no. 1
+        - docker run -i -t sodium-cxx-dev /bin/bash 
+      focus: True
+    - shell_command:           # pane no. 2
+        - docker run -i -t hello_world /bin/bash
+    - shell_command:           # pane no. 3
+        - cd docker_recipe/sodium-cxx-dev/
+        - clear
+    - shell_command:           # pane no. 4
+        - cd docker_recipe/es6-dev/
+        - clear
