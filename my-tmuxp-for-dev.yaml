@@ -4,6 +4,7 @@ environment:
   HOME: /home/testbed/
 windows:
 - window_name: dev window
+  focus: True
   layout: a93f,237x76,0,0[237x63,0,0{123x63,0,0,1,113x63,124,0[113x31,124,0,15,113x15,124,32,17,113x15,124,48,18]},237x12,0,64,14]
   shell_command_before:
     - cd ~/                    # run as a first command in all panes
