@@ -12,7 +12,7 @@ $ pip install --user tmuxp
 ```{r, engine='bash', count_lines}
 $ echo 'export PATH=$HOME/.local/bin:$PATH' >> .bashrc
 $ source .bashrc
-$ git clone git clone https://github.com/cloudhc/tmuxp_recipe.git
+$ git clone https://github.com/cloudhc/tmuxp_recipe.git
 ```
 
 ## run
