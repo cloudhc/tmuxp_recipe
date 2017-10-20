@@ -12,8 +12,7 @@ windows:
     - clear
   panes:
     - shell_command:           # pane no. 1
-        - cd ~/cloudhc/capture
-        - vi
+        - vim .
       focus: true
     - shell_command:           # pane no. 2
         - echo "build"
