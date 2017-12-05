@@ -9,6 +9,7 @@ windows:
   shell_command_before:
     - zsh                    # run as a first command in all panes
     - clear
+    - dcoker stop $(docker ps -q)
   panes:
     - shell_command:           # pane no. 1
         - docker run -i -t sodium-cxx-dev /bin/bash 
@@ -16,8 +17,8 @@ windows:
     - shell_command:           # pane no. 2
         - docker run -i -t hello_world /bin/bash
     - shell_command:           # pane no. 3
-        - cd docker_recipe/sodium-cxx-dev/
-        - clear
+        - cd docker_recipe/nagios4-dev/
+        - ./start-nagios.sh
     - shell_command:           # pane no. 4
-        - cd docker_recipe/es6-dev/
-        - clear
+        - cd docker_recipe/elk-dev/
+        - ./start-elk.sh
