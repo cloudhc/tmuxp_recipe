@@ -9,7 +9,7 @@ windows:
   shell_command_before:
     - zsh                    # run as a first command in all panes
     - clear
-    - dcoker stop $(docker ps -q)
+    - docker stop $(docker ps -q)
   panes:
     - shell_command:           # pane no. 1
         - docker run -i -t sodium-cxx-dev /bin/bash 
