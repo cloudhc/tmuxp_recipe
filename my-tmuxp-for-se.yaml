@@ -1,7 +1,7 @@
 session_name: xabyss-ops
 environment:
   EDITOR: /usr/bin/vim
-  HOME: /home/testbed/
+  HOME: ~/
 windows:
 - window_name: dev
   layout: tiled

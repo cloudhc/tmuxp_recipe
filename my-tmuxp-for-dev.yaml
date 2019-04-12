@@ -1,7 +1,7 @@
 session_name: xabyss-dev
 environment:
   EDITOR: /usr/bin/vim
-  HOME: /home/testbed/
+  HOME: ~/
 windows:
 - window_name: dev window
   focus: True
